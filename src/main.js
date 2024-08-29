@@ -1,4 +1,11 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
+import App from './App.vue';
+import axios from 'axios';
 
-createApp(App).mount('#app')
+Vue.config.productionTip = false;
+
+axios.defaults.baseURL = 'http://localhost:8080/api';
+
+new Vue({
+  render: h => h(App),
+}).$mount('#app');
